@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1125649505713754351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361313012525327002}
+  - component: {fileID: 9038910289889190502}
+  m_Layer: 0
+  m_Name: ReceitasGerais
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361313012525327002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125649505713754351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.21211, y: -1.5016692, z: -0.45788786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9038910289889190502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125649505713754351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25dee910dcc4fe84c8a504ab70fca0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receitasPossiveis:
+  - {fileID: 1172968654945934181, guid: ad54976d603b7a448af45a4ee76edd5a, type: 3}
+  - {fileID: 5072688942590254569, guid: dfee8c09045282f45abde888aac83842, type: 3}
+  - {fileID: 5831605395523950258, guid: 27e89accc709ef6449b8d16139d9fe29, type: 3}
+  - {fileID: 5961925432227530826, guid: 94e8be6bf2f04b740b22923586112f5e, type: 3}
+  - {fileID: 5318139060657422806, guid: 4c4cbd13637fc5049bcc560e7034b51b, type: 3}
+  - {fileID: 2978289845955783699, guid: c2f2d4d769d8f354c91d3ebd97e151c6, type: 3}
+  - {fileID: 8913238117849894146, guid: c39f195d3e6aec24dba651d150b369ae, type: 3}
+  - {fileID: 197087410538810102, guid: 8f51485b9e82b0a4fa427c2107725dda, type: 3}
+  - {fileID: 4429367453293308629, guid: c2c14fcbdd1824541b184c3689a23fc0, type: 3}
+  - {fileID: 7160669083760824075, guid: 5c3eb40b9cead0948994ed962f61518d, type: 3}
+  - {fileID: 3583291089940136694, guid: 49b2d729f8035af40a4ed689e4e27352, type: 3}
+  - {fileID: 5555327606462038284, guid: 8fc140c7342c62c458e2e751012374d0, type: 3}
+  - {fileID: 5755461552817637813, guid: 806c1b58dc5abe245bf8cf5ff08df63f, type: 3}
+  - {fileID: 728860550699675758, guid: 500af2802c315df4787f91a880148ea7, type: 3}
+  - {fileID: 4935279361006354627, guid: 441719b670e4e504d8f9e61c6f100c3e, type: 3}
+  - {fileID: 298531252084692043, guid: 49015f703d8dc5846bc54ef61fe7712b, type: 3}
+  - {fileID: 3870046630988913045, guid: fd14b25eb1ffc9046ac96ab4b5311fd7, type: 3}
+  - {fileID: 8553373682135744086, guid: 4d744bb823b187046b0a6083b5253951, type: 3}
+  - {fileID: 7112264782518690183, guid: 71df389f1f87d4645b063d30fe1b1f99, type: 3}
+  - {fileID: 2999012744024929477, guid: 7ee33adc1b7a4d042ac8c4b60ad453d4, type: 3}
+  - {fileID: 6968429181853242770, guid: bbb8e275bd688b8429f53843b8e59e7b, type: 3}
