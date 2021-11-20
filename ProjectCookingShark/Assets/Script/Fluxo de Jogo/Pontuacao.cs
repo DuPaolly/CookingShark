@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pontuacao : MonoBehaviour
 {
+    [SerializeField] Text pontuacaoNoJogo;
+    [SerializeField] Text pontuacaoTelaFinal;
+
 
     public int pontuacaoDaFase = 0;
     private void Awake()
@@ -24,7 +28,8 @@ public class Pontuacao : MonoBehaviour
 
     void PontuacaoUpdate()
     {
-        Debug.Log(pontuacaoDaFase);
+        pontuacaoNoJogo.text = pontuacaoDaFase.ToString();
+        pontuacaoTelaFinal.text = pontuacaoDaFase.ToString();
     }
 
 }

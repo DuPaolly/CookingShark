@@ -89,6 +89,7 @@ public class Ingrediente : Sabores
                 MiniGameManager.IniciaMiniGame(minigame, this);
                 //Start Minigame
                 podeVoltar = JaChegouNoDestino();
+                TrocarOSpriteDoIngredienteDepoisDePronto(this);
             }
         }
         else
@@ -147,11 +148,9 @@ public class Ingrediente : Sabores
         transform.position = pratoEmProducao.transform.position;
         transform.SetParent(pratoEmProducao.transform);
     }
-
-    //void TrocarOSpriteDoPratoNoDrag(Sprite spriteDoIngredienteSolo)
-    //{
-    //    //spriteDoIngredienteSoloPraFuncao.gameObject.SetActive(true);
-    //    //spriteDoIngredienteSoloPraFuncao.sprite = spriteDoIngredienteSolo;
-    //}
+    void TrocarOSpriteDoIngredienteDepoisDePronto(Ingrediente ingredienteParaTrocarOSprite)
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = ingredienteParaTrocarOSprite.spriteDoIngredientePronto;
+    }
 
 }

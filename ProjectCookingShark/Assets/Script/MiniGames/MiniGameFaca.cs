@@ -9,6 +9,7 @@ public class MiniGameFaca : MiniGameBase
     public Button faca;
     int limiteDeCorte;
     //private void OnLevelWasLoaded(int level)
+    [SerializeField] Slider sliderQuantidadeCortada;
 
 
     public void Faca()
@@ -23,6 +24,7 @@ public class MiniGameFaca : MiniGameBase
             corte = 0;
             faca.enabled = false;
             Debug.Log("Ja fooiii");
+            sliderQuantidadeCortada.value = 0;
             EncerraMiniGame();
         }
     }

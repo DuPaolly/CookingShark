@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaladorMiniGame : MiniGameBase
 {
@@ -18,6 +19,7 @@ public class RaladorMiniGame : MiniGameBase
     public Collider2D[] colisoresEncontrados = new Collider2D [1];
     Vector3 ultimaPosicao;
     Vector3 posicaoDoMouse;
+    [SerializeField] Slider sliderDoTempoDeRalacao;
 
     bool IngredienteEstaNoRalador()
     {
@@ -35,6 +37,7 @@ public class RaladorMiniGame : MiniGameBase
         {
             //Debug.Log(colisoresEncontrados[0].name);
 
+            sliderDoTempoDeRalacao.value = quantidadeRalada;
             Debug.Log($"delta: {trIngrediente.position - ultimaPosicao}");
             deltaDaRalacao = trIngrediente.position.y - ultimaPosicao.y;
             if (deltaDaRalacao < 0)
@@ -42,7 +45,9 @@ public class RaladorMiniGame : MiniGameBase
                 quantidadeRalada += -deltaDaRalacao;
                 if (quantidadeRalada >= quantidadeParaRalar)
                 {
+                    quantidadeRalada = 0;
                     EncerraMiniGame();
+
                 }
             }
             

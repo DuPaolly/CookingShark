@@ -151,6 +151,8 @@ public class Frigideira : Receita
     public void DescartaIngrediente()
     {
         inventarioDeReceita.id = 0;
+        spriteNaFrigideira.gameObject.SetActive(false);
+
 
         if (saborPremiumIngrediente != null)
         {
