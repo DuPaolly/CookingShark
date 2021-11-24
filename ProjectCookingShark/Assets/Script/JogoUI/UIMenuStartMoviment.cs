@@ -83,10 +83,6 @@ public class UIMenuStartMoviment : MonoBehaviour
         MoverParaCima(velocidadeY);
     }
 
-    private void AlphaBolha()
-    {
-        this.aç
-    }
 
     private void MoverParaCima(float velocidade)
     {

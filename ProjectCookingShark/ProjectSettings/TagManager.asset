@@ -54,3 +54,6 @@ TagManager:
   - name: TelaDeFimDeJogo
     uniqueID: 2005063405
     locked: 0
+  - name: VFX
+    uniqueID: 1721892489
+    locked: 0
