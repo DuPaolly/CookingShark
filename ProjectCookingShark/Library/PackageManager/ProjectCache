@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637721771097518013
-    m_Hash: 2815905162
+      ticks: 637734617124417082
+    m_Hash: 2565393904
   m_LockFileStatus:
     m_FilePath: D:/Melies/2 Semestre/Proj Integrador II/CookingSharkNew/CookingShark/ProjectCookingShark/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637721771098360619
-    m_Hash: 26775815
+      ticks: 637734617124417082
+    m_Hash: 2562417085
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
