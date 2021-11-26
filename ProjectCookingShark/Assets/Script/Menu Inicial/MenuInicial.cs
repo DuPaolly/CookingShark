@@ -10,11 +10,13 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] GameObject MenuPerguntaSair;
     [SerializeField] GameObject menuStart;
     [SerializeField] GameObject menuInicial;
+    [SerializeField] GameObject menuCreditos;
     private void Start()
     {
         MenuOptions.SetActive(false);
         MenuPerguntaSair.SetActive(false);
         menuInicial.SetActive(false);
+        menuCreditos.SetActive(false);
     }
 
     private void Update()
@@ -45,6 +47,16 @@ public class MenuInicial : MonoBehaviour
         Debug.Log("Fechar o jogo");
     }
 
+    public void SairSim()
+    {
+        Application.Quit();
+    }
+
+    public void SairNao()
+    {
+        MenuPerguntaSair.SetActive(false);
+    }
+
     void PressSpace()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -52,5 +64,15 @@ public class MenuInicial : MonoBehaviour
             menuStart.SetActive(false);
             menuInicial.SetActive(true);
         }
+    }
+
+    public void AbrirCreditos()
+    {
+        menuCreditos.SetActive(true);
+    }
+
+    public void FecharCreditos()
+    {
+        menuCreditos.SetActive(false);
     }
 }
