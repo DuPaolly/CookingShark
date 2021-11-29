@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 678545945
+    locked: 0
+  - name: Utensilios
+    uniqueID: 3382255727
+    locked: 0
   - name: MenuDeIngredientes
     uniqueID: 2186996813
     locked: 0
@@ -56,4 +62,7 @@ TagManager:
     locked: 0
   - name: VFX
     uniqueID: 1721892489
+    locked: 0
+  - name: UIMenus
+    uniqueID: 4196670319
     locked: 0
