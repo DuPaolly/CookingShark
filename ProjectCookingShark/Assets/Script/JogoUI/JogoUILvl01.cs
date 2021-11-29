@@ -13,7 +13,7 @@ public class JogoUILvl01 : MonoBehaviour
     [SerializeField] GameObject popUpPimenta;
     [SerializeField] GameObject popUpConchas;
     [SerializeField] GameObject popUpSal;
-    [SerializeField] GameObject menuDeConfig;
+    [SerializeField] GameObject menuDePause;
 
     private void Start()
     {
@@ -24,6 +24,11 @@ public class JogoUILvl01 : MonoBehaviour
     public void BotaoIngredientes()
     {
         MenuDeIngredientes.SetActive(true);
+    }
+
+    public void FecharMenuIngrediente()
+    {
+        MenuDeIngredientes.SetActive(false);
     }
 
     public void BotaoParaVisualizarOPedido()
@@ -102,8 +107,8 @@ public class JogoUILvl01 : MonoBehaviour
         Application.Quit();
     }
 
-    public void AbrirMenuDeOpcoes()
+    public void AbrirMenuDePause()
     {
-        menuDeConfig.SetActive(true);
+        menuDePause.SetActive(true);
     }
 }
