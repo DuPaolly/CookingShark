@@ -48,7 +48,7 @@ public class Cliente : MonoBehaviour
 
     public bool podeIr;
 
-    private Vector2 offset, _posicaoAtual;
+    private Vector3 offset, _posicaoAtual;
 
     [SerializeField] [Range(0, 1)] float smoothVelocidade = 1;
 
@@ -61,6 +61,18 @@ public class Cliente : MonoBehaviour
     float tempoDeSpawn = 0;
 
     bool podeSpawnar = false;
+
+    [SerializeField] Animator anim;
+
+    EstadosDoCliente estadoAtual;
+    enum EstadosDoCliente
+    {
+        Inativo,
+        Esperando,
+        AndandoAteMesa,
+        EsperandoPrato,
+        AndandoForaDaTela
+    }
 
     private void Awake()
     {
@@ -77,7 +89,7 @@ public class Cliente : MonoBehaviour
     void FixedUpdate()
     {
         IngredientePremiumParaOCliente();
-        Spawner();
+        
         ManagerCliente();
     }
 
@@ -121,7 +133,7 @@ public class Cliente : MonoBehaviour
         if (podeSpawnar == false)
         {
             tempoDeSpawn += Time.deltaTime;
-            Debug.Log(tempoDeSpawn);
+            //Debug.Log(tempoDeSpawn);
             if (tempoDeSpawn >= tempoSpawnando)
             {
                 podeSpawnar = true;
@@ -129,7 +141,92 @@ public class Cliente : MonoBehaviour
         }
     }
 
+
     void ManagerCliente()
+    {
+        Debug.Log(estadoAtual);
+
+        switch (estadoAtual)
+        {
+            case EstadosDoCliente.Inativo:
+                ExecutaInativo();
+                break;
+            case EstadosDoCliente.Esperando:
+                ExecutaEsperando();
+                break;
+            case EstadosDoCliente.AndandoAteMesa:
+                ExecutaAndandoMesa();
+                break;
+            case EstadosDoCliente.EsperandoPrato:
+                ExecutaEsperandoPedido();
+                break;
+            case EstadosDoCliente.AndandoForaDaTela:
+                ExecutaAndandoForaDaTela();
+                break;
+            default:
+                break;
+
+        }
+    }
+
+
+    void ExecutaInativo()
+    {
+        CreatRandomSpawnTime();
+        pratoRecebido = null;
+        pedidoDoCliente = null;
+        sortearMesas();
+        ResetIngredientes();
+
+        estadoAtual = EstadosDoCliente.Esperando;
+
+    }
+    void ExecutaEsperando()
+    {
+        anim.SetBool("EstaAndando", false);
+        VaParaPosicao(posicoesDeEntradaESaida[saida]);
+        Spawner();
+        if (podeSpawnar == true)
+        {
+            estadoAtual = EstadosDoCliente.AndandoAteMesa;
+        }
+    }
+
+    void ExecutaAndandoMesa()
+    {
+        anim.SetBool("EstaAndando", true);
+        MoverPersonagemParaMesa();
+        if (localDetectado != null && localDetectado.mesa)
+        {
+            SortearPedidoDoCliente();
+            botaoDaInfoDoPedido.gameObject.SetActive(true);
+            estadoAtual = EstadosDoCliente.EsperandoPrato;
+        }
+    }
+
+    void ExecutaEsperandoPedido()
+    {
+        anim.SetBool("EstaAndando", false);
+
+            if (pratoRecebido != null)
+            {
+                Pontuacao();
+                estadoAtual = EstadosDoCliente.AndandoForaDaTela;
+            }
+    }
+
+    void ExecutaAndandoForaDaTela()
+    {
+        anim.SetBool("EstaAndando", true);
+        VaParaPosicao(posicoesDeEntradaESaida[saida]);
+
+        if (localDetectado == posicoesDeEntradaESaida[saida])
+        {
+            estadoAtual = EstadosDoCliente.Inativo;
+        }
+
+    }
+    void OldManagerCliente()
     {
         if (pratoRecebido == null && podeSpawnar == true)
         {
@@ -140,12 +237,18 @@ public class Cliente : MonoBehaviour
             }
             else if (localDetectado != null && localDetectado.mesa)
             {
-                
-                MoverPersonagemParaMesa();
+
                 if (pedidoDoCliente == null)
                 {
+                    anim.SetBool("EstaAndando", false);
+                    Debug.Log("Personagem parou");
                     SortearPedidoDoCliente();
                     botaoDaInfoDoPedido.gameObject.SetActive(true);
+
+                }
+                else
+                {
+                    MoverPersonagemParaMesa();
                 }
             }
             else
@@ -156,6 +259,7 @@ public class Cliente : MonoBehaviour
         else if(pratoRecebido == null && podeSpawnar == false) 
         {
             VaParaPosicao(posicoesDeEntradaESaida[saida]);
+            anim.SetBool("EstaAndando", false);
         }
         else
         {
@@ -266,8 +370,11 @@ public class Cliente : MonoBehaviour
             transform.position,
             _originalPosition,
             smoothVelocidade * Time.deltaTime);
-
+       
         transform.position = _posicaoAtual;
+        anim.SetBool("EstaAndando", true);
+        Debug.Log("andando");
+
         
     }
 
@@ -371,34 +478,34 @@ public class Cliente : MonoBehaviour
     void TextoDoPedido(Sabores.SaboresExistentes sabor1, Sabores.SaboresExistentes sabor2, string ingredienteProib)
     {
         //Enum.GetName(typeof(Sabores.SaboresExistentes), sabor1);
-        saborParaImprimir1.text = Enum.GetName(typeof(Sabores.SaboresExistentes), sabor1);
-        saborParaImprimir1.gameObject.SetActive(true);
+        //saborParaImprimir1.text = Enum.GetName(typeof(Sabores.SaboresExistentes), sabor1);
+        //saborParaImprimir1.gameObject.SetActive(true);
 
-        saborParaImprimir2.text = Enum.GetName(typeof(Sabores.SaboresExistentes), sabor2);
-        saborParaImprimir2.gameObject.SetActive(true);
+        //saborParaImprimir2.text = Enum.GetName(typeof(Sabores.SaboresExistentes), sabor2);
+        //saborParaImprimir2.gameObject.SetActive(true);
 
-        ingredienteProibidoParaImprimir.text = ingredienteProib;
-        ingredienteProibidoParaImprimir.gameObject.SetActive(true);
+        //ingredienteProibidoParaImprimir.text = ingredienteProib;
+        //ingredienteProibidoParaImprimir.gameObject.SetActive(true);
 
-        if(pedidoDoCliente.saborPedido03 != Sabores.SaboresExistentes.nenhum)
-        {
-            if (pedidoDoCliente.saborPedido03 == pedidoDoCliente.SaborPedido01)
-            {
-                ingredientePremium1.gameObject.SetActive(true);
-                ingredientePremium2.gameObject.SetActive(false);
-            }
-            else
-            {
-                ingredientePremium1.gameObject.SetActive(false);
-                ingredientePremium2.gameObject.SetActive(true);
-            }
+        //if(pedidoDoCliente.saborPedido03 != Sabores.SaboresExistentes.nenhum)
+        //{
+        //    if (pedidoDoCliente.saborPedido03 == pedidoDoCliente.SaborPedido01)
+        //    {
+        //        ingredientePremium1.gameObject.SetActive(true);
+        //        ingredientePremium2.gameObject.SetActive(false);
+        //    }
+        //    else
+        //    {
+        //        ingredientePremium1.gameObject.SetActive(false);
+        //        ingredientePremium2.gameObject.SetActive(true);
+        //    }
   
-        }
-        else
-        {
-            ingredientePremium1.gameObject.SetActive(false);
-            ingredientePremium2.gameObject.SetActive(false);
-        }
+        //}
+        //else
+        //{
+        //    ingredientePremium1.gameObject.SetActive(false);
+        //    ingredientePremium2.gameObject.SetActive(false);
+        //}
     }
 
 }

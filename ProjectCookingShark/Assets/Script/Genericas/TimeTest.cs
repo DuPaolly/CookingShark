@@ -19,7 +19,7 @@ public class TimeTest : MonoBehaviour
     {
         inicioDePartida = true;
         tempoTotalDeJogo = SegundosParaMinuto(minutosDeJogo);
-        telaDeFimDeJogo.gameObject.SetActive(false);
+        //telaDeFimDeJogo.gameObject.SetActive(false);
     }
 
     void Update()
@@ -33,7 +33,7 @@ public class TimeTest : MonoBehaviour
         if (finalDePartida == false)
         {
             tempoDeJogo += Time.deltaTime;
-            Debug.Log(tempoDeJogo);
+            //Debug.Log(tempoDeJogo);
             if (tempoDeJogo >= tempoTotalDeJogo)
             {
                 finalDePartida = true;
