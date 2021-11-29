@@ -28,4 +28,9 @@ public class MenuPause : MonoBehaviour
     {
         SceneManager.LoadScene("MenuInicial");
     }
+
+    public void NaoMenuInicial()
+    {
+        menuConfimacaoMenu.SetActive(false);
+    }
 }

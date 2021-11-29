@@ -43,6 +43,7 @@ public class RaladorMiniGame : MiniGameBase
             if (deltaDaRalacao < 0)
             {
                 quantidadeRalada += -deltaDaRalacao;
+                sliderDoTempoDeRalacao.value = quantidadeRalada;
                 if (quantidadeRalada >= quantidadeParaRalar)
                 {
                     quantidadeRalada = 0;

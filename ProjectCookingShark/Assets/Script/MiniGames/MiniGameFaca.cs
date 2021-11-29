@@ -18,6 +18,7 @@ public class MiniGameFaca : MiniGameBase
         {
             corte++;
             Debug.Log("Mais 1 " + corte);
+            sliderQuantidadeCortada.value = corte;
         }
         else
         {
