@@ -710,3 +710,11 @@ Received Import Request.
 Start importing Assets/Assets Gerais/Comidas/BasePratos using Guid(7c674835c51af654f9f451a2c72752d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88f989d4941c0a81dc29c25365154bf1') in 0.009495 seconds 
   Import took 0.012882 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 643.185888 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a8b12e4eeb2a5eb88f9795122e3d6ff') in 2.114080 seconds 
+  Import took 2.364521 seconds .
+
