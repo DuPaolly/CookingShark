@@ -128,4 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePrato: Salada Caesar
   ingredientes01: {fileID: 2980469989264295125, guid: 3f83ee67a3cb71d419d9ad62de93ed56, type: 3}
-  ingredientes02: {fileID: 2980469989264295125, guid: 7d364e35cae4fa04f91909a06bc1cff6, type: 3}
+  ingredientes02: {fileID: 2980469989264295125, guid: dba4f8f1a7528f3409cf8881a1d41126, type: 3}
+  spriteDaReceita: {fileID: 0}
+  spriteDaReceitaNaBandeja: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MiniGameManager : MonoBehaviour
 {
     static MiniGameManager instancia;
-    [SerializeField] GameObject miniGameRalador;
+    [SerializeField] RaladorMiniGame miniGameRalador;
     [SerializeField] MiniGameFaca miniGameTabua;
     public enum TipoMiniGame{
 
@@ -40,15 +40,15 @@ public class MiniGameManager : MonoBehaviour
             case TipoMiniGame.Tabua:
                 instancia.miniGameTabua.InicializaMiniGame(5, ingredienteParaProduzir);
 
-                instancia.miniGameRalador.SetActive(false);
+                //instancia.miniGameRalador.SetActive(false);
                 break;
             case TipoMiniGame.Ralador:
-                instancia.miniGameRalador.SetActive(true);
+                instancia.miniGameRalador.InicializaMiniGame(100, ingredienteParaProduzir);
 
                // instancia.miniGameTabua.InicializaMiniGame(false);
                 break;
             case TipoMiniGame.Pilão:
-                instancia.miniGameRalador.SetActive(false);
+                //instancia.miniGameRalador.SetActive(false);
                 //instancia.miniGameTabua.InicializaMiniGame(false);
                 break;
             default:

@@ -109,7 +109,7 @@ MonoBehaviour:
   Gororoba: {fileID: 1172968654945934181, guid: ad54976d603b7a448af45a4ee76edd5a, type: 3}
   receitaAtual: {fileID: 0}
   inventarioDeReceita: {fileID: 7005031145470835445}
-  spriteNaFrigideira: {fileID: 0}
+  spriteNaFrigideira: {fileID: 8765560031699328943}
 --- !u!61 &9070258174574497373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9038910289889190502, guid: b176481a07ea9de449dab4dc306a1124, type: 3}
+      propertyPath: spritePrato
+      value: 
+      objectReference: {fileID: 8765560031699328943}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b176481a07ea9de449dab4dc306a1124, type: 3}
 --- !u!4 &1054455059558021641 stripped

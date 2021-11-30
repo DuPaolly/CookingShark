@@ -99,7 +99,7 @@ MonoBehaviour:
   nomeDoIngrediente: "Pimenta Pac\xEDfica"
   sabor: 1
   minigame: 0
-  spriteDoIngredienteSolo: {fileID: 21300000, guid: 4497e293a2e5daf40b2506e7a8f7e1cc, type: 3}
+  spriteDoIngredienteSolo: {fileID: 21300000, guid: 2a558aecf8b636a4696444ffbb6e5690, type: 3}
   spriteDoIngredientePronto: {fileID: 21300000, guid: 83cc1d51fefa3be488ef871abad54778, type: 3}
 --- !u!61 &2980469989264295124
 BoxCollider2D:

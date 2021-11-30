@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomePrato: Mousse
   ingredientes01: {fileID: 2980469989264295125, guid: 3f83ee67a3cb71d419d9ad62de93ed56, type: 3}
-  ingredientes02: {fileID: 2980469989264295125, guid: dba4f8f1a7528f3409cf8881a1d41126, type: 3}
+  ingredientes02: {fileID: 2980469989264295125, guid: 7d364e35cae4fa04f91909a06bc1cff6, type: 3}
   spriteDaReceita: {fileID: 21300000, guid: 901c7b97444da474b9fbc2d89f31b249, type: 3}
   spriteDaReceitaNaBandeja: {fileID: 21300000, guid: 7000437582ef7a44d9aeaac780acc339, type: 3}
 --- !u!1 &6020050065829953352

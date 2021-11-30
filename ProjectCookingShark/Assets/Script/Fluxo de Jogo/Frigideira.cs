@@ -232,8 +232,8 @@ public class Frigideira : Receita
         }
         else if(lixeira != null)
         {
-            DescartaIngrediente();
             DesativarOSprite(receitaAtual.spriteDaReceita);
+            DescartaIngrediente();
             podeVoltar = PodeVoltarAPosiçãoInicial();
         }
         
