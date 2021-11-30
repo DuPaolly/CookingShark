@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ListaAnimacoesClientes : MonoBehaviour
 {
-    [SerializeField] public ListaAnimacoesClientes[] animacoesPossiveis;
+    [SerializeField] public Animator[] animacoesPossiveis;
 
     private void Start()
     {
-        
+        Random.InitState((int)System.DateTime.Now.Ticks);
     }
 }

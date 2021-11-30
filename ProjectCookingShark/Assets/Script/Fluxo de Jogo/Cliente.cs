@@ -326,7 +326,7 @@ public class Cliente : MonoBehaviour
         }
         //Pedidos aki!!
 
-        TextoDoPedido(pedidoDoCliente.SaborPedido01, pedidoDoCliente.SaborPedido02, pedidoDoCliente.IngredienteProibidoPedido.NomeDoIngrediente);
+        //TextoDoPedido(pedidoDoCliente.SaborPedido01, pedidoDoCliente.SaborPedido02, pedidoDoCliente.IngredienteProibidoPedido.NomeDoIngrediente);
 
         Debug.Log(pedidoDoCliente.SaborPedido01);
         Debug.Log(pedidoDoCliente.SaborPedido02);
@@ -470,42 +470,14 @@ public class Cliente : MonoBehaviour
     //TextoPrato.text = "Arroz";
     //TextoPrato.gameObject.SetActive(true);
 
-    [SerializeField] Text saborParaImprimir1;
-    [SerializeField] Text saborParaImprimir2;
-    [SerializeField] Text ingredienteProibidoParaImprimir;
-    [SerializeField] Image ingredientePremium1;
-    [SerializeField] Image ingredientePremium2;
-    void TextoDoPedido(Sabores.SaboresExistentes sabor1, Sabores.SaboresExistentes sabor2, string ingredienteProib)
-    {
-        //Enum.GetName(typeof(Sabores.SaboresExistentes), sabor1);
-        //saborParaImprimir1.text = Enum.GetName(typeof(Sabores.SaboresExistentes), sabor1);
-        //saborParaImprimir1.gameObject.SetActive(true);
+    //[SerializeField] SpriteRenderer saborParaImprimir1;
+    //[SerializeField] SpriteRenderer saborParaImprimir2;
+    //[SerializeField] SpriteRenderer ingredienteProibidoParaImprimir;
 
-        //saborParaImprimir2.text = Enum.GetName(typeof(Sabores.SaboresExistentes), sabor2);
-        //saborParaImprimir2.gameObject.SetActive(true);
-
-        //ingredienteProibidoParaImprimir.text = ingredienteProib;
-        //ingredienteProibidoParaImprimir.gameObject.SetActive(true);
-
-        //if(pedidoDoCliente.saborPedido03 != Sabores.SaboresExistentes.nenhum)
-        //{
-        //    if (pedidoDoCliente.saborPedido03 == pedidoDoCliente.SaborPedido01)
-        //    {
-        //        ingredientePremium1.gameObject.SetActive(true);
-        //        ingredientePremium2.gameObject.SetActive(false);
-        //    }
-        //    else
-        //    {
-        //        ingredientePremium1.gameObject.SetActive(false);
-        //        ingredientePremium2.gameObject.SetActive(true);
-        //    }
-  
-        //}
-        //else
-        //{
-        //    ingredientePremium1.gameObject.SetActive(false);
-        //    ingredientePremium2.gameObject.SetActive(false);
-        //}
-    }
+    //[SerializeField] Image BGIngredienteProibido;
+    //[SerializeField] Image BlockIngredienteProibido;
+    //[SerializeField] Image ingredientePremium1;
+    //[SerializeField] Image ingredientePremium2;
+    
 
 }

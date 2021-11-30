@@ -172,7 +172,12 @@ public class Frigideira : Receita
         }
         
         premiumIngredientes = IngredientePremium.SemIngredientePremium;
-        receitaAtual = null;
+
+        if(receitaAtual != null)
+        {
+            DesativarOSprite(receitaAtual.spriteDaReceita);
+            receitaAtual = null;
+        }
     }
     private void ObjectStart()
     {
@@ -232,7 +237,7 @@ public class Frigideira : Receita
         }
         else if(lixeira != null)
         {
-            DesativarOSprite(receitaAtual.spriteDaReceita);
+            
             DescartaIngrediente();
             podeVoltar = PodeVoltarAPosiçãoInicial();
         }
