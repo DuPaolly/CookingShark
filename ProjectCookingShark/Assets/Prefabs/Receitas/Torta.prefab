@@ -129,3 +129,5 @@ MonoBehaviour:
   nomePrato: Torta
   ingredientes01: {fileID: 5666719465753310209, guid: 668e152eeab49a34385d140bd1d44703, type: 3}
   ingredientes02: {fileID: 2980469989264295125, guid: acdd5cf130b65824482fe8ab25142e0e, type: 3}
+  spriteDaReceita: {fileID: 21300000, guid: 7801d6a5f816e944283461df5289d795, type: 3}
+  spriteDaReceitaNaBandeja: {fileID: 21300000, guid: 0555e4723efa3804a839c35daa4addb6, type: 3}

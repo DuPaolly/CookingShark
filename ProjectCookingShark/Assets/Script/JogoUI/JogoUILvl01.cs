@@ -111,4 +111,14 @@ public class JogoUILvl01 : MonoBehaviour
     {
         menuDePause.SetActive(true);
     }
+    
+    public void BotaoCenaFinalVoltarMenuInicial()
+    {
+        SceneManager.LoadScene("MenuInicial");
+    }
+
+    public void BotaoCenaFinalRepetirFase()
+    {
+        SceneManager.LoadScene("Jogo");
+    }
 }

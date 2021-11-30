@@ -47,6 +47,8 @@ MonoBehaviour:
   nomePrato: "Tempur\xE1"
   ingredientes01: {fileID: 2980469989264295125, guid: 598eb3b355021ba45be2f35a3f773385, type: 3}
   ingredientes02: {fileID: 2980469989264295125, guid: acdd5cf130b65824482fe8ab25142e0e, type: 3}
+  spriteDaReceita: {fileID: 21300000, guid: 7e8b7c091ba1408488853ef8fb178258, type: 3}
+  spriteDaReceitaNaBandeja: {fileID: 21300000, guid: dcc6d419ad4925d40a9974f1184757cb, type: 3}
 --- !u!1 &3674496378445294590
 GameObject:
   m_ObjectHideFlags: 0

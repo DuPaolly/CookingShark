@@ -129,3 +129,5 @@ MonoBehaviour:
   nomePrato: "Bai\xE3o Marinho"
   ingredientes01: {fileID: 5666719465753310209, guid: 668e152eeab49a34385d140bd1d44703, type: 3}
   ingredientes02: {fileID: 2980469989264295125, guid: 80fa1df0e72dc924e838365ff83b371b, type: 3}
+  spriteDaReceita: {fileID: 21300000, guid: 9b7868a28dc3b2c49a07b0e4a8bc8897, type: 3}
+  spriteDaReceitaNaBandeja: {fileID: 21300000, guid: e34156d5d8788704188dd9fde5224dfa, type: 3}

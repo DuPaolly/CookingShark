@@ -87,7 +87,7 @@ public class CheckerPrato : MonoBehaviour
     {
         if(ingrediente1Achado != false || ingrediente2Achado != false)
         {
-            Debug.Log("Voc� n�o pode fazer isso!");
+            Debug.Log("Você não pode fazer isso!");
         }
         else
         {
@@ -104,13 +104,19 @@ public class CheckerPrato : MonoBehaviour
     {
         pratoFeito.ingredientes01.gameObject.SetActive(false);
         pratoFeito.ingredientes02.gameObject.SetActive(false);
-        pratoFeito.saborPremiumIngrediente.gameObject.SetActive(false);
+
+        if (pratoFeito.saborPremiumIngrediente != null)
+        {
+            pratoFeito.saborPremiumIngrediente.gameObject.SetActive(false);
+        }
+        
         spritePrato.gameObject.SetActive(true);
         spritePrato.sprite = spriteDoPrato;
     }
 
     void EstaCozinhando()
     {
+
         if (cozinhado == 1)
         {
             sliderTempoDeCozimento.gameObject.SetActive(true);
