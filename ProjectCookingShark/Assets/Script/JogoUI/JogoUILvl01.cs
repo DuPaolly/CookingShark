@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class JogoUILvl01 : MonoBehaviour
 {
     [SerializeField] GameObject MenuDeIngredientes;
-    [SerializeField] GameObject PopUpPedido;
     [SerializeField] GameObject popUpAnemona;
     [SerializeField] GameObject popUpCoral;
     [SerializeField] GameObject popUpAreia;
@@ -18,7 +17,6 @@ public class JogoUILvl01 : MonoBehaviour
     private void Start()
     {
         MenuDeIngredientes.SetActive(false);
-        PopUpPedido.SetActive(false);
     }
 
     public void BotaoIngredientes()
@@ -31,15 +29,9 @@ public class JogoUILvl01 : MonoBehaviour
         MenuDeIngredientes.SetActive(false);
     }
 
-    public void BotaoParaVisualizarOPedido()
-    {
-        PopUpPedido.SetActive(true);
-    }
 
-    public void FecharOVisualizadorDePedidos()
-    {
-        PopUpPedido.SetActive(false);
-    }
+
+
 
     public void AbrirAnemona()
     {
@@ -110,6 +102,7 @@ public class JogoUILvl01 : MonoBehaviour
     public void AbrirMenuDePause()
     {
         menuDePause.SetActive(true);
+        Time.timeScale = 0;
     }
     
     public void BotaoCenaFinalVoltarMenuInicial()

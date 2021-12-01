@@ -12,6 +12,7 @@ public class MenuPause : MonoBehaviour
     public void FecharMenuPause()
     {
         menuPause.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void AbrirMenuOpcoes()

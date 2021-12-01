@@ -10,6 +10,8 @@ public class TimeTest : MonoBehaviour
 
     float tempoReserva;
 
+    int minutos;
+    int segundos;
     int tempoDeJogoNoTimer;
 
     int tempoDeJogo = 0;
@@ -36,7 +38,9 @@ public class TimeTest : MonoBehaviour
     void TempoDeFase()
     {
         tempoDeJogoNoTimer = tempoTotalDeJogo - tempoDeJogo;
-        textoDoTempoDeJogo.text = tempoDeJogoNoTimer.ToString();
+        minutos = tempoDeJogoNoTimer / 60;
+        segundos = tempoDeJogoNoTimer - (minutos * 60);
+        textoDoTempoDeJogo.text = $"{minutos} : {segundos}";
         if (finalDePartida == false)
         {
             tempoReserva += Time.deltaTime;

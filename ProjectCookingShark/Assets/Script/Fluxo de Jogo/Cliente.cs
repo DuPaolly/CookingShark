@@ -55,6 +55,7 @@ public class Cliente : MonoBehaviour
     [SerializeField] int[] randomSpawn;
 
     [SerializeField] Button botaoDaInfoDoPedido;
+    [SerializeField] GameObject menuDoPedido;
 
     float tempoSpawnando = 4;
 
@@ -86,6 +87,7 @@ public class Cliente : MonoBehaviour
 
     void Start()
     {
+        menuDoPedido.SetActive(false);
         Random.InitState((int)System.DateTime.Now.Ticks);
     }
     void FixedUpdate()
@@ -178,6 +180,7 @@ public class Cliente : MonoBehaviour
         pratoRecebido = null;
         pedidoDoCliente = null;
         sortearMesas();
+        SortearAnimacaoCliente();
         ResetIngredientes();
         botaoDaInfoDoPedido.gameObject.SetActive(false);
         estadoAtual = EstadosDoCliente.Esperando;
@@ -188,7 +191,7 @@ public class Cliente : MonoBehaviour
         anim.SetBool("EstaAndando", false);
         VaParaPosicao(posicoesDeEntradaESaida[saida]);
         Spawner();
-        SortearAnimacaoCliente();
+        
         if (podeSpawnar == true)
         {
             estadoAtual = EstadosDoCliente.AndandoAteMesa;
@@ -486,9 +489,17 @@ public class Cliente : MonoBehaviour
     [SerializeField] public Image[] sabor01;
     [SerializeField] public Image[] sabor02;
     [SerializeField] public Image[] ingredientes;
-     
-    
 
+
+    public void BotaoParaVisualizarOPedido()
+    {
+        menuDoPedido.SetActive(true);
+    }
+
+    public void FecharOVisualizadorDePedidos()
+    {
+        menuDoPedido.SetActive(false);
+    }
     void PedidoPrint(Sabores.SaboresExistentes sabor1, Sabores.SaboresExistentes sabor2, string ingredienteProib)
     {
         if (sabor1 == Sabores.SaboresExistentes.Apimentado)
@@ -591,7 +602,7 @@ public class Cliente : MonoBehaviour
     {
         numeroDaAnimacaoEscolida = SortearNumeroDaAnimacao();
 
-        anim = listaDosClientes.animacoesPossiveis[numeroDaAnimacaoEscolida];
+        anim.runtimeAnimatorController = listaDosClientes.animacoesPossiveis[numeroDaAnimacaoEscolida];
     }
 
     public int SortearNumeroDaAnimacao()
