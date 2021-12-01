@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animacoesPossiveis:
-  - {fileID: 8206443017813749655, guid: 778c4f52b115d034baac295bd23a8ecc, type: 3}
-  - {fileID: 0}
+  - {fileID: 8206443017813749652, guid: 778c4f52b115d034baac295bd23a8ecc, type: 3}
+  - {fileID: 6524007583331401608, guid: f0c403d9fa510ab4780665430c423cf6, type: 3}
+  - {fileID: 2822971844555544362, guid: 6e15faacf77c1384a83d978369e08ebe, type: 3}
+  - {fileID: 136513237549367045, guid: 0195130571fffe7498d9e98583f2fec4, type: 3}
+  - {fileID: 2245474830237102497, guid: 37cf4e986f80adf4fa64a38b76afcc46, type: 3}

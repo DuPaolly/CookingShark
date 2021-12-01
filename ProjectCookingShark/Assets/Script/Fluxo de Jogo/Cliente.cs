@@ -62,6 +62,8 @@ public class Cliente : MonoBehaviour
 
     bool podeSpawnar = false;
 
+    [SerializeField] ListaAnimacoesClientes listaDosClientes;
+    int numeroDaAnimacaoEscolida;
     [SerializeField] Animator anim;
 
     EstadosDoCliente estadoAtual;
@@ -186,6 +188,7 @@ public class Cliente : MonoBehaviour
         anim.SetBool("EstaAndando", false);
         VaParaPosicao(posicoesDeEntradaESaida[saida]);
         Spawner();
+        SortearAnimacaoCliente();
         if (podeSpawnar == true)
         {
             estadoAtual = EstadosDoCliente.AndandoAteMesa;
@@ -575,11 +578,25 @@ public class Cliente : MonoBehaviour
                 ingredientePremium1.gameObject.SetActive(false);
                 ingredientePremium2.gameObject.SetActive(true);
             }
-            else
-            {
-                ingredientePremium1.gameObject.SetActive(false);
-                ingredientePremium2.gameObject.SetActive(false);
-            }
+        }
+        else
+        {
+            ingredientePremium1.gameObject.SetActive(false);
+            ingredientePremium2.gameObject.SetActive(false);
         }
     }
+
+
+    void SortearAnimacaoCliente()
+    {
+        numeroDaAnimacaoEscolida = SortearNumeroDaAnimacao();
+
+        anim = listaDosClientes.animacoesPossiveis[numeroDaAnimacaoEscolida];
+    }
+
+    public int SortearNumeroDaAnimacao()
+    {
+        return Random.Range(0, listaDosClientes.animacoesPossiveis.Length);
+    }
+
 }
