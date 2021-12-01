@@ -326,7 +326,7 @@ public class Cliente : MonoBehaviour
         }
         //Pedidos aki!!
 
-        //TextoDoPedido(pedidoDoCliente.SaborPedido01, pedidoDoCliente.SaborPedido02, pedidoDoCliente.IngredienteProibidoPedido.NomeDoIngrediente);
+        PedidoPrint(pedidoDoCliente.SaborPedido01, pedidoDoCliente.SaborPedido02, pedidoDoCliente.IngredienteProibidoPedido.NomeDoIngrediente);
 
         Debug.Log(pedidoDoCliente.SaborPedido01);
         Debug.Log(pedidoDoCliente.SaborPedido02);
@@ -470,14 +470,105 @@ public class Cliente : MonoBehaviour
     //TextoPrato.text = "Arroz";
     //TextoPrato.gameObject.SetActive(true);
 
-    //[SerializeField] SpriteRenderer saborParaImprimir1;
-    //[SerializeField] SpriteRenderer saborParaImprimir2;
-    //[SerializeField] SpriteRenderer ingredienteProibidoParaImprimir;
-
-    //[SerializeField] Image BGIngredienteProibido;
-    //[SerializeField] Image BlockIngredienteProibido;
-    //[SerializeField] Image ingredientePremium1;
-    //[SerializeField] Image ingredientePremium2;
+    [SerializeField] Image BGIngredienteProibido;
+    [SerializeField] Image BlockIngredienteProibido;
+    [SerializeField] GameObject ingredientePremium1;
+    [SerializeField] GameObject ingredientePremium2;
+    [SerializeField] public Image[] sabor01;
+    [SerializeField] public Image[] sabor02;
+    [SerializeField] public Image[] ingredientes;
+     
     
 
+    void PedidoPrint(Sabores.SaboresExistentes sabor1, Sabores.SaboresExistentes sabor2, string ingredienteProib)
+    {
+        if (sabor1 == Sabores.SaboresExistentes.Apimentado)
+        {
+            sabor01[0].gameObject.SetActive(true);
+            sabor01[1].gameObject.SetActive(false);
+            sabor01[2].gameObject.SetActive(false);
+        }
+        else if (sabor1 == Sabores.SaboresExistentes.Azedo)
+        {
+            sabor01[0].gameObject.SetActive(false);
+            sabor01[1].gameObject.SetActive(true);
+            sabor01[2].gameObject.SetActive(false);
+        }
+        else if(sabor1 == Sabores.SaboresExistentes.Salgado)
+        {
+            sabor01[0].gameObject.SetActive(false);
+            sabor01[1].gameObject.SetActive(false);
+            sabor01[2].gameObject.SetActive(true);
+        }
+
+        if (ingredienteProib == "AnemonaPicada")
+        {
+            ingredientes[0].gameObject.SetActive(true);
+            ingredientes[1].gameObject.SetActive(false);
+            ingredientes[2].gameObject.SetActive(false);
+            ingredientes[3].gameObject.SetActive(false);
+            ingredientes[4].gameObject.SetActive(false);
+            ingredientes[5].gameObject.SetActive(false);
+        }
+        else if (ingredienteProib == "Areia Temperada")
+        {
+            ingredientes[0].gameObject.SetActive(false);
+            ingredientes[1].gameObject.SetActive(true);
+            ingredientes[2].gameObject.SetActive(false);
+            ingredientes[3].gameObject.SetActive(false);
+            ingredientes[4].gameObject.SetActive(false);
+            ingredientes[5].gameObject.SetActive(false);
+        }
+        else if (ingredienteProib == "Conchas Refogadas")
+        {
+            ingredientes[0].gameObject.SetActive(false);
+            ingredientes[1].gameObject.SetActive(false);
+            ingredientes[2].gameObject.SetActive(true);
+            ingredientes[3].gameObject.SetActive(false);
+            ingredientes[4].gameObject.SetActive(false);
+            ingredientes[5].gameObject.SetActive(false);
+        }
+        else if (ingredienteProib == "RaspasDeCoral")
+        {
+            ingredientes[0].gameObject.SetActive(false);
+            ingredientes[1].gameObject.SetActive(false);
+            ingredientes[2].gameObject.SetActive(false);
+            ingredientes[3].gameObject.SetActive(true);
+            ingredientes[4].gameObject.SetActive(false);
+            ingredientes[5].gameObject.SetActive(false);
+        }
+        else if (ingredienteProib == "Pimenta Pacífica")
+        {
+            ingredientes[0].gameObject.SetActive(false);
+            ingredientes[1].gameObject.SetActive(false);
+            ingredientes[2].gameObject.SetActive(false);
+            ingredientes[3].gameObject.SetActive(false);
+            ingredientes[4].gameObject.SetActive(true);
+            ingredientes[5].gameObject.SetActive(false);
+        }
+        else if (ingredienteProib == "Sal Oceânico")
+        {
+            ingredientes[0].gameObject.SetActive(false);
+            ingredientes[1].gameObject.SetActive(false);
+            ingredientes[2].gameObject.SetActive(false);
+            ingredientes[3].gameObject.SetActive(false);
+            ingredientes[4].gameObject.SetActive(false);
+            ingredientes[5].gameObject.SetActive(true);
+        }
+        
+
+        if (pedidoDoCliente.saborPedido03 != Sabores.SaboresExistentes.nenhum)
+        {
+            if (pedidoDoCliente.saborPedido03 == pedidoDoCliente.SaborPedido01)
+            {
+                ingredientePremium1.gameObject.SetActive(true);
+                ingredientePremium2.gameObject.SetActive(false);
+            }
+            else
+            {
+                ingredientePremium1.gameObject.SetActive(false);
+                ingredientePremium2.gameObject.SetActive(true);
+            }
+        }
+    }
 }

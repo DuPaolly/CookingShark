@@ -18,7 +18,7 @@ public class JogoUILvl01 : MonoBehaviour
     private void Start()
     {
         MenuDeIngredientes.SetActive(false);
-        //PopUpPedido.SetActive(false);
+        PopUpPedido.SetActive(false);
     }
 
     public void BotaoIngredientes()
