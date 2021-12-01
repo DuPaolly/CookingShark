@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeTest : MonoBehaviour
 {
     [SerializeField] Canvas telaDeFimDeJogo;
+    [SerializeField] Text textoDoTempoDeJogo;
 
-    float tempoDeJogo = 0;
+    float tempoReserva;
 
-    float tempoTotalDeJogo;
+    int tempoDeJogoNoTimer;
+
+    int tempoDeJogo = 0;
+
+    int tempoTotalDeJogo;
 
     bool inicioDePartida = false;
     bool finalDePartida = false;
 
-    [SerializeField] float minutosDeJogo = 2;
+    [SerializeField] int minutosDeJogo = 2;
 
     void Awake()
     {
@@ -29,10 +35,12 @@ public class TimeTest : MonoBehaviour
 
     void TempoDeFase()
     {
-
+        tempoDeJogoNoTimer = tempoTotalDeJogo - tempoDeJogo;
+        textoDoTempoDeJogo.text = tempoDeJogoNoTimer.ToString();
         if (finalDePartida == false)
         {
-            tempoDeJogo += Time.deltaTime;
+            tempoReserva += Time.deltaTime;
+            tempoDeJogo = (int)tempoReserva;
             //Debug.Log(tempoDeJogo);
             if (tempoDeJogo >= tempoTotalDeJogo)
             {
@@ -42,11 +50,13 @@ public class TimeTest : MonoBehaviour
         }
     }
 
-    float SegundosParaMinuto(float minutos)
+    int SegundosParaMinuto(int minutos)
     {
         Debug.Log(minutos);
         return minutos * 60;
     }
+
+    
 
     //tempoDeCozinhando += Time.deltaTime;
 

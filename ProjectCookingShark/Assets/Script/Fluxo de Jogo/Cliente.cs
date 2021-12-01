@@ -177,7 +177,7 @@ public class Cliente : MonoBehaviour
         pedidoDoCliente = null;
         sortearMesas();
         ResetIngredientes();
-
+        botaoDaInfoDoPedido.gameObject.SetActive(false);
         estadoAtual = EstadosDoCliente.Esperando;
 
     }
@@ -198,8 +198,7 @@ public class Cliente : MonoBehaviour
         MoverPersonagemParaMesa();
         if (localDetectado != null && localDetectado.mesa)
         {
-            SortearPedidoDoCliente();
-            botaoDaInfoDoPedido.gameObject.SetActive(true);
+            
             estadoAtual = EstadosDoCliente.EsperandoPrato;
         }
     }
@@ -208,7 +207,13 @@ public class Cliente : MonoBehaviour
     {
         anim.SetBool("EstaAndando", false);
 
-            if (pratoRecebido != null)
+        if (localDetectado != null && localDetectado.mesa && pedidoDoCliente == null)
+        {
+            SortearPedidoDoCliente();
+            botaoDaInfoDoPedido.gameObject.SetActive(true);
+        }
+
+        if (pratoRecebido != null)
             {
                 Pontuacao();
                 estadoAtual = EstadosDoCliente.AndandoForaDaTela;
@@ -218,8 +223,9 @@ public class Cliente : MonoBehaviour
     void ExecutaAndandoForaDaTela()
     {
         anim.SetBool("EstaAndando", true);
-        VaParaPosicao(posicoesDeEntradaESaida[saida]);
 
+        VaParaPosicao(posicoesDeEntradaESaida[saida]);
+        
         if (localDetectado == posicoesDeEntradaESaida[saida])
         {
             estadoAtual = EstadosDoCliente.Inativo;
@@ -564,10 +570,15 @@ public class Cliente : MonoBehaviour
                 ingredientePremium1.gameObject.SetActive(true);
                 ingredientePremium2.gameObject.SetActive(false);
             }
-            else
+            else if(pedidoDoCliente.saborPedido03 == pedidoDoCliente.SaborPedido02)
             {
                 ingredientePremium1.gameObject.SetActive(false);
                 ingredientePremium2.gameObject.SetActive(true);
+            }
+            else
+            {
+                ingredientePremium1.gameObject.SetActive(false);
+                ingredientePremium2.gameObject.SetActive(false);
             }
         }
     }
