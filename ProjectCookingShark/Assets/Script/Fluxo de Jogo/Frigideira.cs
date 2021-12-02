@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class Frigideira : Receita
 {
@@ -29,6 +30,9 @@ public class Frigideira : Receita
     [SerializeField] CheckerPrato inventarioDeReceita;
 
     [SerializeField] public SpriteRenderer spriteNaFrigideira;
+    [SerializeField] Button botaoCozinhar;
+
+    public bool podeArrastar = true;
 
     public enum IngredientePremium
     {
@@ -39,6 +43,7 @@ public class Frigideira : Receita
     private void Awake()
     {
         ObjectStart();
+        //botaoCozinhar.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -89,7 +94,7 @@ public class Frigideira : Receita
     }
     public bool PodeReceberIngrediente(Ingrediente ingredienteParaAdicionar)
     {
-       
+        
         if(receitaAtual == null) { 
             if(ingredientes01 == null && ingredientes02 == null)
             {
@@ -98,7 +103,8 @@ public class Frigideira : Receita
             }
             else if(ingredientes01 != null && ingredientes02 != null)
             {
-                if(saborPremiumIngrediente == null)
+                //botaoCozinhar.gameObject.SetActive(true);
+                if (saborPremiumIngrediente == null)
                 {
                     if(ingredienteParaAdicionar.NomeDoIngrediente == ingredientes01.NomeDoIngrediente)
                     { 
@@ -194,9 +200,14 @@ public class Frigideira : Receita
     }
     private void MouseDragUpdate()
     {
-        podeVoltar = JaChegouNoDestino();
-        transform.position = GetMousePos();
+        if (podeArrastar)
+        {
+            podeVoltar = JaChegouNoDestino();
+            transform.position = GetMousePos();
+        }
     }
+
+
     Vector3 GetMousePos()
     {
         podeVoltar = JaChegouNoDestino();

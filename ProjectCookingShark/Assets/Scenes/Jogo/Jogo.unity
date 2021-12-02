@@ -6850,6 +6850,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 962750231509949450, guid: c1ce2d20ac6b35c439ffe9abde682599, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c1ce2d20ac6b35c439ffe9abde682599, type: 3}
+--- !u!114 &717261914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7067646862890853627, guid: dd29d154c6f8a244684db62fc9a1ac8d, type: 3}
+  m_PrefabInstance: {fileID: 1294541158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &722017916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2980469989264295131, guid: 7d364e35cae4fa04f91909a06bc1cff6, type: 3}
@@ -12499,6 +12510,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7788700717145071577, guid: dd29d154c6f8a244684db62fc9a1ac8d, type: 3}
+      propertyPath: botaoCozinhar
+      value: 
+      objectReference: {fileID: 717261914}
     - target: {fileID: 7788700717145071577, guid: dd29d154c6f8a244684db62fc9a1ac8d, type: 3}
       propertyPath: spriteNaFrigideira
       value: 

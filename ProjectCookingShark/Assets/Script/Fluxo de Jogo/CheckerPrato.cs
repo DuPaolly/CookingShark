@@ -9,6 +9,7 @@ public class CheckerPrato : MonoBehaviour
     [SerializeField] Receita[] receitasPossiveis;
     [SerializeField] public SpriteRenderer spritePrato;
     [SerializeField] public Slider sliderTempoDeCozimento;
+    
 
     public bool ingrediente1Achado = false;
     public bool ingrediente2Achado = false;
@@ -119,6 +120,7 @@ public class CheckerPrato : MonoBehaviour
 
         if (cozinhado == 1)
         {
+            pratoFeito.podeArrastar = false;
             sliderTempoDeCozimento.gameObject.SetActive(true);
             sliderTempoDeCozimento.value = tempoDeCozinhando;
             tempoDeCozinhando += Time.deltaTime;
@@ -133,6 +135,7 @@ public class CheckerPrato : MonoBehaviour
             PodeVerificarOPrato();
             cozinhado = 3;
             sliderTempoDeCozimento.gameObject.SetActive(false);
+            pratoFeito.podeArrastar = true;
         }
     }
 
