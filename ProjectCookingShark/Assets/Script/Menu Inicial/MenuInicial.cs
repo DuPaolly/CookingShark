@@ -11,12 +11,18 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] GameObject menuStart;
     [SerializeField] GameObject menuInicial;
     [SerializeField] GameObject menuCreditos;
+    [SerializeField] GameObject pag1Tutorial;
+    [SerializeField] GameObject pag2Tutorial;
+    [SerializeField] GameObject pag3Tutorial;
     private void Start()
     {
         MenuOptions.SetActive(false);
         MenuPerguntaSair.SetActive(false);
         menuInicial.SetActive(false);
         menuCreditos.SetActive(false);
+        pag1Tutorial.SetActive(false);
+        pag2Tutorial.SetActive(false);
+        pag3Tutorial.SetActive(false);
     }
 
     private void Update()
@@ -25,17 +31,34 @@ public class MenuInicial : MonoBehaviour
     }
     public void BotaoJogar()
     {
-        Debug.Log("Iniciar o Jogo");
-        SceneManager.LoadScene("Jogo");
+        pag1Tutorial.SetActive(true);
+        pag2Tutorial.SetActive(false);
+        pag3Tutorial.SetActive(false);
         //spritePrato.sprite = SpriteReceitas[1];
     }
 
-    //public void BotaoHistoria()
-    //{
-    //    Debug.Log("Iniciar a história do Jogo");
-    //    ///spritePrato.sprite = SpriteReceitas[0];
+    public void BotaoContinuarPag1()
+    {
+        pag1Tutorial.SetActive(false);
+        pag2Tutorial.SetActive(true);
+        pag3Tutorial.SetActive(false);
+    }
 
-    //}
+    public void BotaoContinuarPag2()
+    {
+        pag1Tutorial.SetActive(false);
+        pag2Tutorial.SetActive(false);
+        pag3Tutorial.SetActive(true);
+    }
+
+    public void BotaoContinuarPag3()
+    {
+        SceneManager.LoadScene("Jogo");
+        pag1Tutorial.SetActive(false);
+        pag2Tutorial.SetActive(false);
+        pag3Tutorial.SetActive(false);
+    }
+
     public void BotaoOpcoes()
     {
         Debug.Log("Abre o menu de opções");

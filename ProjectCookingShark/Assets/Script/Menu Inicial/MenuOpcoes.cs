@@ -9,10 +9,14 @@ public class MenuOpcoes : MonoBehaviour
     [SerializeField] GameObject menuOpcoes;
     [SerializeField] AudioMixer mixerVolumeGeral;
     [SerializeField] public Dropdown dropdownResolucoes;
+    [SerializeField] Slider sliderDeVolume;
     Resolution[] resolucoes;
 
     private void Start()
     {
+
+        VolumeGeral(sliderDeVolume.value);
+
         resolucoes = Screen.resolutions;
         dropdownResolucoes.ClearOptions();
         int resolucaoPadraoIndex = 0;
@@ -46,9 +50,10 @@ public class MenuOpcoes : MonoBehaviour
         Debug.Log("OLHA A TELA CHEIAAA");
     }
 
-    public void VolumeGeral(float volumeGeral)
+    public void VolumeGeral(float novoVolumeGeral)
     {
-
+        novoVolumeGeral = Mathf.Log10(novoVolumeGeral) * 20;
+        mixerVolumeGeral.SetFloat("VolumeGeral", novoVolumeGeral);
     }
 
     public void SetResolucao(int indexResolucao)

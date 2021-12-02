@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Jogo/MenuInicial.unity
+    guid: 1d8fa95df92794e4e92e11b50dfd7a05
   - enabled: 1
-    path: Assets/Scenes/Testes/TesteButton.unity
-    guid: 6cf2675b84929764cb771e8233caae0f
-  - enabled: 1
-    path: Assets/Scenes/Testes/DudaTestes.unity
-    guid: 1dc37b13c7da32b4698213aff86464e8
+    path: Assets/Scenes/Jogo/Jogo.unity
+    guid: a9763391d64f60848973f6778b300cf1
   m_configObjects: {}

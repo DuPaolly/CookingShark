@@ -27,7 +27,7 @@ public class MenuPause : MonoBehaviour
 
     public void SimMenuInicial()
     {
-        SceneManager.LoadScene("MenuInicial");
+        Application.Quit();
     }
 
     public void NaoMenuInicial()

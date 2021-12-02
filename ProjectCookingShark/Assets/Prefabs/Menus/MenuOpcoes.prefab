@@ -499,13 +499,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 7716985301046570205}
   m_HandleRect: {fileID: 7716985301822860069}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.517
+  m_Value: 0.498
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7716985301062493714}
+        m_TargetAssemblyTypeName: MenuOpcoes, Assembly-CSharp
+        m_MethodName: VolumeGeral
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7716985300837845921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,8 +1463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuOpcoes: {fileID: 7716985301062493712}
-  mixerVolumeGeral: {fileID: 0}
+  mixerVolumeGeral: {fileID: 24100000, guid: dfb4440eab4f48f4895500995d9e64f5, type: 2}
   dropdownResolucoes: {fileID: 7716985302106430376}
+  sliderDeVolume: {fileID: 7716985300711804315}
 --- !u!1 &7716985301076876109
 GameObject:
   m_ObjectHideFlags: 0

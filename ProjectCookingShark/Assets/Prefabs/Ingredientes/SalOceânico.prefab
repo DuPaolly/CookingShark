@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeDoIngrediente: "Sal Oce\xE2nico"
   sabor: 4
-  minigame: 0
+  minigame: 1
   spriteDoIngredienteSolo: {fileID: 21300000, guid: 5b2078ff281d2ae4789a5de8922452f4, type: 3}
   spriteDoIngredientePronto: {fileID: 21300000, guid: 1a1a14870a9b97047a83b3f88fb2c447, type: 3}
 --- !u!61 &2980469989264295124

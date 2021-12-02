@@ -67,13 +67,11 @@ public class UIMenuStartMoviment : MonoBehaviour
         Logo
     }
 
-    void Awake()
+    void Start()
     {
         ParametrosIniciaisDoObjeto();
-
-       
     }
-    void FixedUpdate()
+    void Update()
     {
         AnimeEsteObjeto();
         MudarEstadoDaLogo();
