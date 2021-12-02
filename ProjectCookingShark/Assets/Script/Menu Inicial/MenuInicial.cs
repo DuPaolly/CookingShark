@@ -14,6 +14,7 @@ public class MenuInicial : MonoBehaviour
     [SerializeField] GameObject pag1Tutorial;
     [SerializeField] GameObject pag2Tutorial;
     [SerializeField] GameObject pag3Tutorial;
+    [SerializeField] GameObject pag4Tutorial;
     private void Start()
     {
         MenuOptions.SetActive(false);
@@ -23,6 +24,7 @@ public class MenuInicial : MonoBehaviour
         pag1Tutorial.SetActive(false);
         pag2Tutorial.SetActive(false);
         pag3Tutorial.SetActive(false);
+        pag4Tutorial.SetActive(false);
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class MenuInicial : MonoBehaviour
         pag1Tutorial.SetActive(true);
         pag2Tutorial.SetActive(false);
         pag3Tutorial.SetActive(false);
+        pag4Tutorial.SetActive(false);
         //spritePrato.sprite = SpriteReceitas[1];
     }
 
@@ -42,6 +45,7 @@ public class MenuInicial : MonoBehaviour
         pag1Tutorial.SetActive(false);
         pag2Tutorial.SetActive(true);
         pag3Tutorial.SetActive(false);
+        pag4Tutorial.SetActive(false);
     }
 
     public void BotaoContinuarPag2()
@@ -49,14 +53,23 @@ public class MenuInicial : MonoBehaviour
         pag1Tutorial.SetActive(false);
         pag2Tutorial.SetActive(false);
         pag3Tutorial.SetActive(true);
+        pag4Tutorial.SetActive(false);
     }
 
     public void BotaoContinuarPag3()
+    {
+        pag1Tutorial.SetActive(false);
+        pag2Tutorial.SetActive(false);
+        pag3Tutorial.SetActive(false);
+        pag4Tutorial.SetActive(true);
+    }
+    public void BotaoContinuarPag4()
     {
         SceneManager.LoadScene("Jogo");
         pag1Tutorial.SetActive(false);
         pag2Tutorial.SetActive(false);
         pag3Tutorial.SetActive(false);
+        pag4Tutorial.SetActive(false);
     }
 
     public void BotaoOpcoes()
